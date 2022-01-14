@@ -14,9 +14,7 @@ from pyrogram.emoji import *
 @RenamerNs.on_message(filters.command("help") & filters.private & filters.incoming)
 async def help(c, m, cb=False):
     button = [[
-        InlineKeyboardButton(f'{HOUSE_WITH_GARDEN} Home', callback_data='back'),
-        InlineKeyboardButton(f'{MONEY_BAG} Donate', callback_data='donate')
-        ],[
+        InlineKeyboardButton(f'{HOUSE_WITH_GARDEN} Home', callback_data='back'),[
         InlineKeyboardButton(f'{NO_ENTRY} 𝙲𝚕𝚘𝚜𝚎', callback_data='close')
     ]]
     reply_markup = InlineKeyboardMarkup(button)
@@ -40,7 +38,7 @@ async def help(c, m, cb=False):
 @RenamerNs.on_message(filters.command("start") & filters.private & filters.incoming)
 async def start(c, m, cb=False):
     owner = await c.get_users(Config.OWNER_ID)
-    owner_username = owner.username if owner.username else 'Ns_bot_updates'
+    owner_username = owner.username if owner.username else 'AlluKishore'
     button = [[
         InlineKeyboardButton(f'{MAN_TEACHER_LIGHT_SKIN_TONE} My Owner', url=f'https://t.me/{owner_username}'),
         InlineKeyboardButton(f'{ROBOT} About', callback_data='about')
@@ -72,9 +70,7 @@ async def about(c, m, cb=False):
     owner = await c.get_users(Config.OWNER_ID)
 
     button = [[
-        InlineKeyboardButton(f'{HOUSE_WITH_GARDEN} Home', callback_data='back'),
-        InlineKeyboardButton(f'{MONEY_BAG} Donate', callback_data='donate')
-        ],[
+        InlineKeyboardButton(f'{HOUSE_WITH_GARDEN} Home', callback_data='back'),[
         InlineKeyboardButton(f'{NO_ENTRY} Close', callback_data="close")
     ]]
     reply_markup = InlineKeyboardMarkup(button)
